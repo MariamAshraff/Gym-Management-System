@@ -31,7 +31,7 @@ namespace Gym_Management_System.Data.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
        
-        //public virtual ICollection<TraineeSubscription> TraineeSubscriptions { get; set; }
+        public virtual ICollection<TraineeSubscription> TraineeSubscriptions { get; set; }
 
     }
 }
