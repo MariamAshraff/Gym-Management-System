@@ -15,8 +15,12 @@ namespace Gym_Management_System.Data.Models
         [Required, MaxLength(50)]
         public string Name { get; set; } //Basic Monthly , Gold 3 Months ,Elite Year
 
+
         [Range(1, 3650)]
-        public int DurationDays { get; set; }
+        public int AllowedDays { get; set; }
+
+        //[Range(1, 3650)]
+        //public int DurationDays { get; set; }
 
         [Range(0, double.MaxValue)]
         public decimal Price { get; set; }

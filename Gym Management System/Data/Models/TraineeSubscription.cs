@@ -21,6 +21,8 @@ namespace Gym_Management_System.Data.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
+        public int UsedDays { get; set; } = 0;
+
         public bool IsActive { get; set; } = true;
 
         public virtual ICollection<Payment> Payments { get; set; }
