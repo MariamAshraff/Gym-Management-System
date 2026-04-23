@@ -23,6 +23,6 @@ namespace Gym_Management_System.Data.Models
 
         public bool IsActive { get; set; } = true;
 
-        //public virtual ICollection<Payment> Payments { get; set; }
+        public virtual ICollection<Payment> Payments { get; set; }
     }
 }

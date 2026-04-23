@@ -23,6 +23,8 @@ namespace Gym_Management_System.Data.Context
         public DbSet<Trainer> Trainers { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<TraineeSubscription> TraineeSubscriptions { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+        
 
 
 
