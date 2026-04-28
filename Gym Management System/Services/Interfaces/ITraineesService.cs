@@ -10,5 +10,14 @@ namespace Gym_Management_System.Services.Interfaces
     public interface ITraineesService
     {
      
+        List<TraineeViewModel> GetAll();
+
+        void Add(Trainee trainee);
+
+        void Update(Trainee trainee);
+
+        void Delete(int id);
+
+        List<Trainer> GetAllTrainers();
     }
 }

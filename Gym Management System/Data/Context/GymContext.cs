@@ -11,11 +11,16 @@ namespace Gym_Management_System.Data.Context
     public class GymContext : DbContext
     {
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    /*    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseSqlServer(
 
+<<<<<<< Updated upstream
             optionsBuilder.UseSqlServer("Data Source =.;Initial Catalog=GymSystem; Integrated Security=True; TrustServerCertificate=True");
         }
+=======
+            "Server=.;Database=GymSystem;Trusted_Connection=True;TrustServerCertificate=True");
+        }*/
 
         //DbSets for your entities
         public DbSet<User> Users { get; set; }
