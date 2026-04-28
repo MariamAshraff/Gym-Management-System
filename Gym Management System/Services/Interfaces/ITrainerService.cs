@@ -1,4 +1,6 @@
 ﻿using Gym_Management_System.Data.Models;
+using Gym_Management_System.Dtos;
+using Gym_Management_System.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,7 @@ namespace Gym_Management_System.Services.Interfaces
 {
     public interface ITrainerService
     {
-        public List<Trainer> GetAll();
+       public List<TrainerDisplayDto> GetAll();
         public Trainer GetById(int id);
         public void Add(Trainer trainer);
         public void Update(Trainer trainer);

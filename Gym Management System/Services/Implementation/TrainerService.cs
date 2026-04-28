@@ -1,6 +1,8 @@
 ﻿using Gym_Management_System.Data;
 using Gym_Management_System.Data.Context;
 using Gym_Management_System.Data.Models;
+using Gym_Management_System.Dtos;
+using Gym_Management_System.DTOs;
 using Gym_Management_System.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,12 +17,22 @@ namespace Gym_Management_System.Services.Implementation
             _gymContext = gymContext;
         }
 
-        public List<Trainer> GetAll()
+        // في الـ Service
+
+        public List<TrainerDisplayDto> GetAll()
         {
             return _gymContext.Trainers
                 .Where(t => t.IsActive)
-                .Include(t => t.Trainees)
-                .ToList();
+                .Select(t => new TrainerDisplayDto
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    Phone = t.Phone,
+                    Specialty = t.Specialty,
+                    Salary = t.Salary,
+                    HireDate = t.HireDate,
+                    TraineeCount = t.Trainees.Count
+                }).ToList();
         }
 
         public Trainer GetById(int id)
@@ -57,5 +69,7 @@ namespace Gym_Management_System.Services.Implementation
             return _gymContext.Trainees
                 .Count(s => s.TrainerId == trainerId); 
         }
+
+        
     }
 }
