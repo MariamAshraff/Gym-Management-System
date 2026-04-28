@@ -150,6 +150,7 @@
             // 
             // txtName
             // 
+            txtName.BackColor = SystemColors.Window;
             txtName.Location = new Point(63, 48);
             txtName.Name = "txtName";
             txtName.Size = new Size(100, 23);
@@ -221,17 +222,20 @@
             // 
             // dgvTrainers
             // 
+            dgvTrainers.BackgroundColor = SystemColors.ActiveCaption;
+            dgvTrainers.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dgvTrainers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTrainers.Location = new Point(406, 25);
+            dgvTrainers.Location = new Point(380, 25);
             dgvTrainers.Name = "dgvTrainers";
-            dgvTrainers.Size = new Size(362, 251);
+            dgvTrainers.Size = new Size(388, 251);
             dgvTrainers.TabIndex = 9;
-            dgvTrainers.CellContentClick += dgvTrainers_CellContentClick;
+          
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(dgvTrainers);
             Controls.Add(panel1);

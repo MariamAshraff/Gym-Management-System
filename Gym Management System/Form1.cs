@@ -1,4 +1,5 @@
 using Gym_Management_System.Data.Models;
+using Gym_Management_System.Dtos;
 using Gym_Management_System.Services.Interfaces;
 
 namespace Gym_Management_System
@@ -28,11 +29,9 @@ namespace Gym_Management_System
 
         private void LoadTrainers()
         {
-            // بنروح نجيب القائمة المحدثة من الداتابيز
-            var list = _trainerService.GetAll();
-
+            var list = _trainerService.GetAll(); // بيرجع List<TrainerDisplayDto>
             dgvTrainers.DataSource = null;
-            dgvTrainers.AutoGenerateColumns = true; // عشان الأعمدة تظهر لوحدها
+            dgvTrainers.AutoGenerateColumns = true;
             dgvTrainers.DataSource = list;
         }
 
@@ -166,30 +165,21 @@ namespace Gym_Management_System
             control.Focus();
         }
 
-        private void dgvTrainers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvTrainers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                // سحب السطر الحالي
-                DataGridViewRow row = dgvTrainers.Rows[e.RowIndex];
+            if (e.RowIndex < 0) return;
 
-                // سحب الكائن المرتبط بالسطر (المدرب)
-                var trainer = row.DataBoundItem as Trainer;
+            // ✅ اقرأ من الـ DTO مش من الـ Trainer
+            var list = dgvTrainers.DataSource as List<TrainerDisplayDto>;
+            if (list == null) return;
 
-                if (trainer != null)
-                {
-                    // ملء الحقول بالبيانات لكي يعمل الـ Update والـ Delete
-                    _selectedId = trainer.Id;
-                    txtName.Text = trainer.Name;
-                    txtPhone.Text = trainer.Phone;
-                    txtSpecialty.Text = trainer.Specialty;
-                    txtSalary.Text = trainer.Salary.ToString();
-                    chkIsActive.Checked = trainer.IsActive;
+            var dto = list[e.RowIndex];
 
-                    // تغيير لون السطر المختار ليعرف المستخدم أنه تم الاختيار
-                    row.Selected = true;
-                }
-            }
+            _selectedId = dto.Id;
+            txtName.Text = dto.Name;
+            txtPhone.Text = dto.Phone;
+            txtSpecialty.Text = dto.Specialty;
+            txtSalary.Text = dto.Salary.ToString();
         }
     }
 }
