@@ -9,9 +9,9 @@ namespace Gym_Management_System.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-IH1846Q\\SQLEXPRESS;Initial Catalog=GymSystem; Integrated Security=True; TrustServerCertificate=True");
         }
+
 
         //DbSets for your entities
         public DbSet<User> Users { get; set; }
