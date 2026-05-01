@@ -22,7 +22,7 @@ namespace Gym_Management_System.Data.Models
         [Range(10, 100)]
         public int Age { get; set; }
 
-       public TraineeStatus Status { get; set; } = TraineeStatus.Active;
+       public SubscriptionStatus Status { get; set; } = SubscriptionStatus.Active;
 
 
         public int? TrainerId { get; set; }

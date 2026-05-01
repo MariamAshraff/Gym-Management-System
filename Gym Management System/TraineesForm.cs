@@ -103,7 +103,7 @@ namespace Gym_Management_System
         // Load Status Enum
         private void LoadStatus()
         {
-            StatusBox.DataSource = Enum.GetValues(typeof(TraineeStatus));
+            StatusBox.DataSource = Enum.GetValues(typeof(SubscriptionStatus));
         }
 
         // Load Data
@@ -185,7 +185,7 @@ namespace Gym_Management_System
                 Name = txtName.Text.Trim(),
                 Phone = txtPhone.Text.Trim(),
                 Age = age,
-                Status = (TraineeStatus)StatusBox.SelectedItem,
+                Status = (SubscriptionStatus)StatusBox.SelectedItem,
                 CreatedAt = DateTime.Now,
                 TrainerId = (int)comboBoxTrainer.SelectedValue
             };
@@ -235,8 +235,8 @@ namespace Gym_Management_System
                 Phone = txtPhone.Text.Trim(),
                 Age = age,
                 Status = StatusBox.SelectedItem != null
-                    ? (TraineeStatus)StatusBox.SelectedItem
-                    : TraineeStatus.Active,
+                    ? (SubscriptionStatus)StatusBox.SelectedItem
+                    : SubscriptionStatus.Active,
                 TrainerId = comboBoxTrainer.SelectedValue != null
                     ? (int)comboBoxTrainer.SelectedValue
                     : null
@@ -272,7 +272,7 @@ namespace Gym_Management_System
                 textAge.Text = DataGridViewTrainees.CurrentRow.Cells["Age"].Value?.ToString();
 
                 var statusValue = DataGridViewTrainees.CurrentRow.Cells["Status"].Value?.ToString();
-                if (Enum.TryParse(typeof(TraineeStatus), statusValue, out var result))
+                if (Enum.TryParse(typeof(SubscriptionStatus), statusValue, out var result))
                     StatusBox.SelectedItem = result;
 
                 // Trainer

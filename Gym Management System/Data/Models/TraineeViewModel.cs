@@ -13,7 +13,7 @@ namespace Gym_Management_System.Data.Models
         public string Name { get; set; }
         public string Phone { get; set; }
         public int Age { get; set; }
-        public TraineeStatus Status { get; set; }
+        public SubscriptionStatus Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public int? TrainerId { get; set; }
         public string TrainerName { get; set; }

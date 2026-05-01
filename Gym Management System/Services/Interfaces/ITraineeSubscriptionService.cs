@@ -7,18 +7,12 @@ using System.Threading.Tasks;
 
 namespace Gym_Management_System.Services.Interfaces
 {
-    public interface ITraineesService
+    public interface ITraineeSubscriptionService
     {
-     
-        List<TraineeViewModel> GetAll();
-        Trainee? GetTrainee(int id);
-
-        void Add(Trainee trainee);
-
-        void Update(Trainee trainee);
-
+        List<TraineeSubscription> GetAll();
+        TraineeSubscription? GetById(int id);
+        void Add(TraineeSubscription trineeSubscription);
+        void Update(TraineeSubscription trineeSubscription);
         void Delete(int id);
-
-        List<Trainer> GetAllTrainers();
     }
 }
