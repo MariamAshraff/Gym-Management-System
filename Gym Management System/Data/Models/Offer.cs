@@ -19,7 +19,7 @@ namespace Gym_Management_System.Data.Models
         public DateTime EndDate { get; set; }
         
         public int SubscriptionId { get; set; }
-        public virtual Subscription Subscription { get; set; }
+        public virtual TrainingProgram Subscription { get; set; }
 
     }
 }

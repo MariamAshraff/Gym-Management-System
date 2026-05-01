@@ -15,10 +15,6 @@ namespace Gym_Management_System.Views
         public StartForm()
         {
             InitializeComponent();
-            NavbarControl control = new NavbarControl();
-            
-            control.Dock = DockStyle.Top;
-            this.Controls.Add(control);
         }
     }
 }

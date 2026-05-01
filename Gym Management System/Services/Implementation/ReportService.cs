@@ -20,7 +20,7 @@ namespace Gym_Management_System.Services.Implementation
         public int GetTodayAttendanceCount()
         {
             return _gymContext.TraineeAttendances
-                .Count(a => a.Date.Date == DateTime.Today);
+                .Count(a => a.CheckIn.Date == DateTime.Today);
         }
 
         // اشتراكات شغالة دلوقتي
@@ -36,8 +36,8 @@ namespace Gym_Management_System.Services.Implementation
             var firstDay = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
             return _gymContext.TraineeSubscriptions
                 .Where(ts => ts.StartDate >= firstDay)
-                .Include(ts => ts.Subscription)
-                .Sum(ts => ts.Subscription.Price);
+                .Include(ts => ts.TrainingProgram)
+                .Sum(ts => ts.TrainingProgram.Price);
         }
 
         // تقرير المدربين وعدد أعضائهم
@@ -62,12 +62,12 @@ namespace Gym_Management_System.Services.Implementation
             return _gymContext.TraineeSubscriptions
                 .Where(ts => ts.EndDate < DateTime.Today)
                 .Include(ts => ts.Trainee)
-                .Include(ts => ts.Subscription)
+                .Include(ts => ts.TrainingProgram)
                 .Select(ts => new ExpiredSubscriptionDto
                 {
                     TraineeName = ts.Trainee.Name,
                     Phone = ts.Trainee.Phone,
-                    SubscriptionName = ts.Subscription.Name,
+                    SubscriptionName = ts.TrainingProgram.Name,
                     EndDate = ts.EndDate
                 }).ToList();
         }
@@ -76,15 +76,13 @@ namespace Gym_Management_System.Services.Implementation
         public List<AttendanceReportDto> GetAttendanceReport()
         {
             return _gymContext.TraineeAttendances
-                .Include(a => a.Trainee)
-                .OrderByDescending(a => a.Date)
+                .Include(a => a.TraineeSubscription.Trainee)
+                .OrderByDescending(a => a.CheckIn)
                 .Take(50)
                 .Select(a => new AttendanceReportDto
                 {
-                    TraineeName = a.Trainee.Name,
-                    Date = a.Date,
-                    CheckIn = a.CheckIn,
-               
+                    TraineeName = a.TraineeSubscription.Trainee.Name,
+                    Date = a.CheckIn,
                 })
                 .ToList();
         }
