@@ -15,7 +15,11 @@ namespace Gym_Management_System.Services.Implementation
     public class TraineesService : ITraineesService
     {
        
-        private GymContext db = new GymContext();
+        private GymContext db ;
+        public TraineesService(GymContext context)
+        {
+            this.db = context;
+        }
         public List<TraineeViewModel> GetAll()
         {
             try
@@ -43,12 +47,7 @@ namespace Gym_Management_System.Services.Implementation
                 return new List<TraineeViewModel>();
             }
         }
-        public Trainee GetById(int id)
-        {
-            return db.Trainees
-                .Include(t => t.Trainer)
-                .FirstOrDefault(t => t.Id == id);
-        }
+        
         public void Add(Trainee trainee)
         {
             trainee.CreatedAt = DateTime.Now;
@@ -85,6 +84,11 @@ namespace Gym_Management_System.Services.Implementation
                 db.Trainees.Remove(trainee);
                 db.SaveChanges();
             }
+        }
+
+        public Trainee? GetTrainee(int id)
+        {
+            return db.Trainees.FirstOrDefault(p => p.Id == id);
         }
     }
 }

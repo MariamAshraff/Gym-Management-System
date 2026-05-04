@@ -10,10 +10,8 @@ namespace Gym_Management_System.Data.Models
     {
         public int Id { get; set; }
 
-        public int TraineeId { get; set; }
-        public virtual Trainee Trainee { get; set; }
-
-        public DateTime Date { get; set; }
+        public int TraineeSubscriptionId { get; set; }
+        public virtual TraineeSubscription  TraineeSubscription { get; set; }
         public DateTime CheckIn { get; set; }
     }
 }

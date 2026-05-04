@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using Gym_Management_System.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,21 +7,18 @@ namespace Gym_Management_System.Data.Context
     public class GymContext : DbContext
     {
 
-          protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            {
-                //optionsBuilder.UseSqlServer(
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //optionsBuilder.UseSqlServer("Data Source=DESKTOP-IH1846Q\\SQLEXPRESS;Initial Catalog=GymSystem; Integrated Security=True; TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=LAPTOP-C0VV8CJS\\MSSQLSERVER29;Initial Catalog=GymSystem; Integrated Security=True; TrustServerCertificate=True");
+        }
 
-    //<<<<<<< Updated upstream
-                optionsBuilder.UseSqlServer("Data Source =localhost\\SQLEXPRESS;Initial Catalog=GymSystem; Integrated Security=True; TrustServerCertificate=True");
-            
-                //"Server=.;Database=GymSystem;Trusted_Connection=True;TrustServerCertificate=True");
-            }
 
         //DbSets for your entities
         public DbSet<User> Users { get; set; }
         public DbSet<Trainee> Trainees { get; set; }
         public DbSet<Trainer> Trainers { get; set; }
-        public DbSet<Subscription> Subscriptions { get; set; }
+        public DbSet<TrainingProgram> TrainingPrograms { get; set; }
         public DbSet<TraineeSubscription> TraineeSubscriptions { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<TrainerAttendance> TrainerAttendances { get; set; }

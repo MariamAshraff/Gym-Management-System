@@ -18,7 +18,10 @@ namespace Gym_Management_System.Services.Implementation
         }
 
         // في الـ Service
-
+        public Trainee? GetTrainee(int id)
+        {
+            return _gymContext.Trainees.FirstOrDefault(p => p.Id == id);
+        }
         public List<TrainerDisplayDto> GetAll()
         {
             return _gymContext.Trainers

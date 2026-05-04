@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gym_Management_System.Data.Enums
+namespace Gym_Management_System.Services.Interfaces
 {
-    public enum TraineeStatus
+    public interface IService
     {
-        Active = 1,
-        Frozen = 2,
-        Expired = 3
+        void SaveChanges();
     }
 }

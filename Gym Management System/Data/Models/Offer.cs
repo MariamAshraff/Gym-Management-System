@@ -8,7 +8,7 @@ namespace Gym_Management_System.Data.Models
 {
     public class Offer
     {
-        public int Id { get; set; }
+       public int Id { get; set; }
 
         public string Name { get; set; }
 
@@ -17,9 +17,9 @@ namespace Gym_Management_System.Data.Models
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
-
+        
         public int SubscriptionId { get; set; }
-        public virtual Subscription Subscription { get; set; }
+        public virtual TrainingProgram Subscription { get; set; }
 
     }
 }
