@@ -1,0 +1,64 @@
+1-Service :
+*logic and validation
+windows form link service and validate inputs from this from 
+.git folder
+Gym Management System folder 
+.gitignore file 
+Gym Management System.sln
+
+Gym Management System folder has these folders and files:-
+1-Data folder
+	Context folder ->GymContext.cs
+	Enums folder ->TraineeStatus.cs
+	Models folder ->
+			Offer.cs
+			Payment.cs
+			Subscription.cs
+			Trainee.cs
+			TraineeAttendance.cs
+			TraineeViewModel.cs
+			Trainer.cs
+			Trainer.cs	
+			TrainerAttendance.cs
+			User.cs
+2-Dtos Folder
+	AttendanceReportDto.cs
+	ExpiredSubscriptionDto.cs
+	TrainerDisplayDto.cs
+	TrainerReportDto.cs
+3-Migrations Folder
+4-Services foldr
+	ReportService.cs
+	TraineesService.cs
+	TrainerService.cs
+5-InterFace Folder
+	IReportService.cs
+	ITraineesService.cs
+	iTrainerService.cs
+6-Views Folder 
+	StartForm.cs
+	StartFormDesigner.cs 
+Form1.cs
+Form1.Designer.cs
+Form1.resx
+Gym Management System.csproj
+Program.cs 
+TraineesForm.cs 
+TraineesForm.Designer.cs 
+TraineesForm.resx
+
+localhost\SQLEXPRESS
+
+
+        public void AddUser(string username, string password, string role)
+        {
+            var user = new User
+            {
+                Username = username,
+                PasswordHash = password,
+                Role = role
+            };
+
+            _context.Users.Add(user);
+            _context.SaveChanges();
+        }
