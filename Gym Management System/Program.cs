@@ -37,8 +37,10 @@ namespace Gym_Management_System
             // see https://aka.ms/applicationconfiguration.
             //            ApplicationConfiguration.Initialize();
             //  Application.Run(new StartForm());
-            //  ITraineesService traineesService = new TraineesService();
-            // Application.Run(new TraineesForm(traineesService));
+            //ITraineesService traineesService = new TraineesService(context);
+            //Application.Run(new TraineesForm(traineesService));
+            //ITrainerService trainersService = new TrainerService(context);
+            //Application.Run(new Form1(trainersService));
 
 
         }

@@ -1,16 +1,350 @@
-﻿namespace Gym_Management_System
+﻿//namespace Gym_Management_System
+//{
+//    partial class TraineeSubscriptionFormcs
+//    {
+//        /// <summary>
+//        /// Required designer variable.
+//        /// </summary>
+//        private System.ComponentModel.IContainer components = null;
+
+//        /// <summary>
+//        /// Clean up any resources being used.
+//        /// </summary>
+//        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+//        protected override void Dispose(bool disposing)
+//        {
+//            if (disposing && (components != null))
+//            {
+//                components.Dispose();
+//            }
+//            base.Dispose(disposing);
+//        }
+
+//        #region Windows Form Designer generated code
+
+//        /// <summary>
+//        /// Required method for Designer support - do not modify
+//        /// the contents of this method with the code editor.
+//        /// </summary>
+//        private void InitializeComponent()
+//        {
+//            TraineeId = new Label();
+//            StartDateLbl = new Label();
+//            MonthsLbl = new Label();
+//            DiscountLbl = new Label();
+//            label4 = new Label();
+//            TrainingProgramlbl = new Label();
+//            TrainingProgramBox = new ComboBox();
+//            DataGroupBox = new GroupBox();
+//            MonthsCount = new NumericUpDown();
+//            StartDatePicker = new DateTimePicker();
+//            TraineeIdExist = new TextBox();
+//            TraineeIdBox = new TextBox();
+//            Subscribe_PayBtn = new Button();
+//            PaymentGBox = new GroupBox();
+//            radioInstaPay = new RadioButton();
+//            radioCreditCard = new RadioButton();
+//            radioCash = new RadioButton();
+//            PaymentMethodLbl = new Label();
+//            NetAmount = new TextBox();
+//            NetAmountLbl = new Label();
+//            DiscountAmount = new TextBox();
+//            MoneyAmount = new TextBox();
+//            DataGroupBox.SuspendLayout();
+//            ((System.ComponentModel.ISupportInitialize)MonthsCount).BeginInit();
+//            PaymentGBox.SuspendLayout();
+//            SuspendLayout();
+//            // 
+//            // TraineeId
+//            // 
+//            TraineeId.AutoSize = true;
+//            TraineeId.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            TraineeId.Location = new Point(8, 37);
+//            TraineeId.Name = "TraineeId";
+//            TraineeId.Padding = new Padding(2);
+//            TraineeId.Size = new Size(81, 21);
+//            TraineeId.TabIndex = 0;
+//            TraineeId.Text = "Trainee Id: ";
+//            // 
+//            // StartDateLbl
+//            // 
+//            StartDateLbl.AutoSize = true;
+//            StartDateLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            StartDateLbl.Location = new Point(8, 169);
+//            StartDateLbl.Name = "StartDateLbl";
+//            StartDateLbl.Padding = new Padding(2);
+//            StartDateLbl.Size = new Size(82, 21);
+//            StartDateLbl.TabIndex = 1;
+//            StartDateLbl.Text = "Start Date: ";
+//            // 
+//            // MonthsLbl
+//            // 
+//            MonthsLbl.AutoSize = true;
+//            MonthsLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            MonthsLbl.Location = new Point(6, 230);
+//            MonthsLbl.Name = "MonthsLbl";
+//            MonthsLbl.Padding = new Padding(2);
+//            MonthsLbl.Size = new Size(71, 21);
+//            MonthsLbl.TabIndex = 2;
+//            MonthsLbl.Text = "Months : ";
+//            // 
+//            // DiscountLbl
+//            // 
+//            DiscountLbl.AutoSize = true;
+//            DiscountLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            DiscountLbl.Location = new Point(6, 88);
+//            DiscountLbl.Name = "DiscountLbl";
+//            DiscountLbl.Padding = new Padding(2);
+//            DiscountLbl.Size = new Size(79, 21);
+//            DiscountLbl.TabIndex = 3;
+//            DiscountLbl.Text = "Discount : ";
+//            // 
+//            // label4
+//            // 
+//            label4.AutoSize = true;
+//            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            label4.Location = new Point(6, 48);
+//            label4.Name = "label4";
+//            label4.Padding = new Padding(2);
+//            label4.Size = new Size(139, 21);
+//            label4.TabIndex = 4;
+//            label4.Text = "Amount Of Money : ";
+//            // 
+//            // TrainingProgramlbl
+//            // 
+//            TrainingProgramlbl.AutoSize = true;
+//            TrainingProgramlbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            TrainingProgramlbl.Location = new Point(6, 110);
+//            TrainingProgramlbl.Name = "TrainingProgramlbl";
+//            TrainingProgramlbl.Padding = new Padding(2);
+//            TrainingProgramlbl.Size = new Size(128, 21);
+//            TrainingProgramlbl.TabIndex = 5;
+//            TrainingProgramlbl.Text = "Training Program: ";
+//            // 
+//            // TrainingProgramBox
+//            // 
+//            TrainingProgramBox.FormattingEnabled = true;
+//            TrainingProgramBox.Location = new Point(140, 110);
+//            TrainingProgramBox.Name = "TrainingProgramBox";
+//            TrainingProgramBox.Size = new Size(228, 25);
+//            TrainingProgramBox.TabIndex = 6;
+//            TrainingProgramBox.SelectedIndexChanged += TrainingProgramBox_SelectedIndexChanged;
+//            // 
+//            // DataGroupBox
+//            // 
+//            DataGroupBox.Controls.Add(MonthsCount);
+//            DataGroupBox.Controls.Add(StartDatePicker);
+//            DataGroupBox.Controls.Add(TraineeIdExist);
+//            DataGroupBox.Controls.Add(TraineeIdBox);
+//            DataGroupBox.Controls.Add(TraineeId);
+//            DataGroupBox.Controls.Add(MonthsLbl);
+//            DataGroupBox.Controls.Add(TrainingProgramBox);
+//            DataGroupBox.Controls.Add(TrainingProgramlbl);
+//            DataGroupBox.Controls.Add(StartDateLbl);
+//            DataGroupBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            DataGroupBox.Location = new Point(33, 25);
+//            DataGroupBox.Name = "DataGroupBox";
+//            DataGroupBox.Size = new Size(601, 283);
+//            DataGroupBox.TabIndex = 7;
+//            DataGroupBox.TabStop = false;
+//            DataGroupBox.Text = "Trainee Subscription";
+//            // 
+//            // MonthsCount
+//            // 
+//            MonthsCount.Location = new Point(100, 226);
+//            MonthsCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+//            MonthsCount.Name = "MonthsCount";
+//            MonthsCount.Size = new Size(268, 25);
+//            MonthsCount.TabIndex = 10;
+//            MonthsCount.Value = new decimal(new int[] { 1, 0, 0, 0 });
+//            MonthsCount.ValueChanged += MonthsCount_ValueChanged;
+//            // 
+//            // StartDatePicker
+//            // 
+//            StartDatePicker.Location = new Point(100, 165);
+//            StartDatePicker.Name = "StartDatePicker";
+//            StartDatePicker.Size = new Size(268, 25);
+//            StartDatePicker.TabIndex = 9;
+//            // 
+//            // TraineeIdExist
+//            // 
+//            TraineeIdExist.BackColor = SystemColors.Control;
+//            TraineeIdExist.BorderStyle = BorderStyle.None;
+//            TraineeIdExist.ForeColor = Color.Red;
+//            TraineeIdExist.Location = new Point(95, 72);
+//            TraineeIdExist.Name = "TraineeIdExist";
+//            TraineeIdExist.Size = new Size(237, 18);
+//            TraineeIdExist.TabIndex = 8;
+//            // 
+//            // TraineeIdBox
+//            // 
+//            TraineeIdBox.Location = new Point(95, 35);
+//            TraineeIdBox.Name = "TraineeIdBox";
+//            TraineeIdBox.Size = new Size(273, 25);
+//            TraineeIdBox.TabIndex = 7;
+//            TraineeIdBox.TextChanged += TraineeIdBox_TextChanged;
+//            // 
+//            // Subscribe_PayBtn
+//            // 
+//            Subscribe_PayBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            Subscribe_PayBtn.Location = new Point(207, 647);
+//            Subscribe_PayBtn.Name = "Subscribe_PayBtn";
+//            Subscribe_PayBtn.Size = new Size(153, 43);
+//            Subscribe_PayBtn.TabIndex = 8;
+//            Subscribe_PayBtn.Text = "Subscribe &  Pay";
+//            Subscribe_PayBtn.UseVisualStyleBackColor = true;
+//            Subscribe_PayBtn.Click += Subscribe_PayBtn_Click;
+//            // 
+//            // PaymentGBox
+//            // 
+//            PaymentGBox.Controls.Add(radioInstaPay);
+//            PaymentGBox.Controls.Add(radioCreditCard);
+//            PaymentGBox.Controls.Add(radioCash);
+//            PaymentGBox.Controls.Add(PaymentMethodLbl);
+//            PaymentGBox.Controls.Add(NetAmount);
+//            PaymentGBox.Controls.Add(NetAmountLbl);
+//            PaymentGBox.Controls.Add(DiscountAmount);
+//            PaymentGBox.Controls.Add(MoneyAmount);
+//            PaymentGBox.Controls.Add(label4);
+//            PaymentGBox.Controls.Add(DiscountLbl);
+//            PaymentGBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            PaymentGBox.Location = new Point(41, 330);
+//            PaymentGBox.Name = "PaymentGBox";
+//            PaymentGBox.Size = new Size(593, 264);
+//            PaymentGBox.TabIndex = 9;
+//            PaymentGBox.TabStop = false;
+//            PaymentGBox.Text = "Subscription Payment";
+//            // 
+//            // radioInstaPay
+//            // 
+//            radioInstaPay.AutoSize = true;
+//            radioInstaPay.Location = new Point(166, 224);
+//            radioInstaPay.Name = "radioInstaPay";
+//            radioInstaPay.Size = new Size(78, 21);
+//            radioInstaPay.TabIndex = 12;
+//            radioInstaPay.Text = "InstaPay";
+//            radioInstaPay.UseVisualStyleBackColor = true;
+//            // 
+//            // radioCreditCard
+//            // 
+//            radioCreditCard.AutoSize = true;
+//            radioCreditCard.Location = new Point(330, 224);
+//            radioCreditCard.Name = "radioCreditCard";
+//            radioCreditCard.Size = new Size(95, 21);
+//            radioCreditCard.TabIndex = 11;
+//            radioCreditCard.Text = "Credit Card";
+//            radioCreditCard.UseVisualStyleBackColor = true;
+//            // 
+//            // radioCash
+//            // 
+//            radioCash.AutoSize = true;
+//            radioCash.Checked = true;
+//            radioCash.Location = new Point(53, 224);
+//            radioCash.Name = "radioCash";
+//            radioCash.Size = new Size(55, 21);
+//            radioCash.TabIndex = 10;
+//            radioCash.TabStop = true;
+//            radioCash.Text = "Cash";
+//            radioCash.UseVisualStyleBackColor = true;
+//            // 
+//            // PaymentMethodLbl
+//            // 
+//            PaymentMethodLbl.AutoSize = true;
+//            PaymentMethodLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            PaymentMethodLbl.Location = new Point(7, 187);
+//            PaymentMethodLbl.Name = "PaymentMethodLbl";
+//            PaymentMethodLbl.Padding = new Padding(2);
+//            PaymentMethodLbl.Size = new Size(130, 21);
+//            PaymentMethodLbl.TabIndex = 9;
+//            PaymentMethodLbl.Text = "Payment Method : ";
+//            // 
+//            // NetAmount
+//            // 
+//            NetAmount.Location = new Point(132, 134);
+//            NetAmount.Name = "NetAmount";
+//            NetAmount.ReadOnly = true;
+//            NetAmount.Size = new Size(228, 25);
+//            NetAmount.TabIndex = 8;
+//            // 
+//            // NetAmountLbl
+//            // 
+//            NetAmountLbl.AutoSize = true;
+//            NetAmountLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+//            NetAmountLbl.Location = new Point(7, 137);
+//            NetAmountLbl.Name = "NetAmountLbl";
+//            NetAmountLbl.Padding = new Padding(2);
+//            NetAmountLbl.Size = new Size(127, 21);
+//            NetAmountLbl.TabIndex = 7;
+//            NetAmountLbl.Text = "Net Paid Amount: ";
+//            // 
+//            // DiscountAmount
+//            // 
+//            DiscountAmount.Location = new Point(103, 92);
+//            DiscountAmount.Name = "DiscountAmount";
+//            DiscountAmount.ReadOnly = true;
+//            DiscountAmount.Size = new Size(257, 25);
+//            DiscountAmount.TabIndex = 6;
+//            // 
+//            // MoneyAmount
+//            // 
+//            MoneyAmount.Location = new Point(151, 48);
+//            MoneyAmount.Name = "MoneyAmount";
+//            MoneyAmount.ReadOnly = true;
+//            MoneyAmount.Size = new Size(209, 25);
+//            MoneyAmount.TabIndex = 5;
+//            // 
+//            // TraineeSubscriptionFormcs
+//            // 
+//            AutoScaleDimensions = new SizeF(7F, 15F);
+//            AutoScaleMode = AutoScaleMode.Font;
+//            ClientSize = new Size(800, 749);
+//            Controls.Add(PaymentGBox);
+//            Controls.Add(Subscribe_PayBtn);
+//            Controls.Add(DataGroupBox);
+//            Name = "TraineeSubscriptionFormcs";
+//            Text = "TraineeSubscriptionFormcs";
+//            Load += TraineeSubscriptionFormcs_Load;
+//            DataGroupBox.ResumeLayout(false);
+//            DataGroupBox.PerformLayout();
+//            ((System.ComponentModel.ISupportInitialize)MonthsCount).EndInit();
+//            PaymentGBox.ResumeLayout(false);
+//            PaymentGBox.PerformLayout();
+//            ResumeLayout(false);
+//        }
+
+//        #endregion
+
+//        private Label TraineeId;
+//        private Label StartDateLbl;
+//        private Label MonthsLbl;
+//        private Label DiscountLbl;
+//        private Label label4;
+//        private Label TrainingProgramlbl;
+//        private ComboBox TrainingProgramBox;
+//        private GroupBox DataGroupBox;
+//        private Button Subscribe_PayBtn;
+//        private TextBox TraineeIdBox;
+//        private TextBox TraineeIdExist;
+//        private DateTimePicker StartDatePicker;
+//        private NumericUpDown MonthsCount;
+//        private GroupBox PaymentGBox;
+//        private TextBox MoneyAmount;
+//        private TextBox DiscountAmount;
+//        private TextBox NetAmount;
+//        private Label NetAmountLbl;
+//        private Label PaymentMethodLbl;
+//        private RadioButton radioInstaPay;
+//        private RadioButton radioCreditCard;
+//        private RadioButton radioCash;
+//    }
+//}
+
+namespace Gym_Management_System
 {
     partial class TraineeSubscriptionFormcs
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +356,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             TraineeId = new Label();
@@ -58,75 +388,72 @@
             // TraineeId
             // 
             TraineeId.AutoSize = true;
-            TraineeId.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TraineeId.Location = new Point(8, 37);
+            TraineeId.ForeColor = Color.FromArgb(100, 150, 240);
+            TraineeId.Location = new Point(15, 45);
             TraineeId.Name = "TraineeId";
-            TraineeId.Padding = new Padding(2);
-            TraineeId.Size = new Size(81, 21);
+            TraineeId.Size = new Size(92, 23);
             TraineeId.TabIndex = 0;
-            TraineeId.Text = "Trainee Id: ";
+            TraineeId.Text = "Trainee Id:";
             // 
             // StartDateLbl
             // 
             StartDateLbl.AutoSize = true;
-            StartDateLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            StartDateLbl.Location = new Point(8, 169);
+            StartDateLbl.ForeColor = Color.FromArgb(100, 150, 240);
+            StartDateLbl.Location = new Point(15, 170);
             StartDateLbl.Name = "StartDateLbl";
-            StartDateLbl.Padding = new Padding(2);
-            StartDateLbl.Size = new Size(82, 21);
+            StartDateLbl.Size = new Size(96, 23);
             StartDateLbl.TabIndex = 1;
-            StartDateLbl.Text = "Start Date: ";
+            StartDateLbl.Text = "Start Date:";
             // 
             // MonthsLbl
             // 
             MonthsLbl.AutoSize = true;
-            MonthsLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            MonthsLbl.Location = new Point(6, 230);
+            MonthsLbl.ForeColor = Color.FromArgb(100, 150, 240);
+            MonthsLbl.Location = new Point(15, 230);
             MonthsLbl.Name = "MonthsLbl";
-            MonthsLbl.Padding = new Padding(2);
-            MonthsLbl.Size = new Size(71, 21);
+            MonthsLbl.Size = new Size(76, 23);
             MonthsLbl.TabIndex = 2;
-            MonthsLbl.Text = "Months : ";
+            MonthsLbl.Text = "Months:";
             // 
             // DiscountLbl
             // 
             DiscountLbl.AutoSize = true;
-            DiscountLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DiscountLbl.Location = new Point(6, 88);
+            DiscountLbl.ForeColor = Color.FromArgb(100, 150, 240);
+            DiscountLbl.Location = new Point(15, 95);
             DiscountLbl.Name = "DiscountLbl";
-            DiscountLbl.Padding = new Padding(2);
-            DiscountLbl.Size = new Size(79, 21);
+            DiscountLbl.Size = new Size(84, 23);
             DiscountLbl.TabIndex = 3;
-            DiscountLbl.Text = "Discount : ";
+            DiscountLbl.Text = "Discount:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(6, 48);
+            label4.ForeColor = Color.FromArgb(100, 150, 240);
+            label4.Location = new Point(15, 45);
             label4.Name = "label4";
-            label4.Padding = new Padding(2);
-            label4.Size = new Size(139, 21);
+            label4.Size = new Size(160, 23);
             label4.TabIndex = 4;
-            label4.Text = "Amount Of Money : ";
+            label4.Text = "Amount Of Money:";
             // 
             // TrainingProgramlbl
             // 
             TrainingProgramlbl.AutoSize = true;
-            TrainingProgramlbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TrainingProgramlbl.Location = new Point(6, 110);
+            TrainingProgramlbl.ForeColor = Color.FromArgb(100, 150, 240);
+            TrainingProgramlbl.Location = new Point(15, 110);
             TrainingProgramlbl.Name = "TrainingProgramlbl";
-            TrainingProgramlbl.Padding = new Padding(2);
-            TrainingProgramlbl.Size = new Size(128, 21);
+            TrainingProgramlbl.Size = new Size(153, 23);
             TrainingProgramlbl.TabIndex = 5;
-            TrainingProgramlbl.Text = "Training Program: ";
+            TrainingProgramlbl.Text = "Training Program:";
             // 
             // TrainingProgramBox
             // 
+            TrainingProgramBox.BackColor = Color.FromArgb(25, 45, 75);
+            TrainingProgramBox.FlatStyle = FlatStyle.Flat;
+            TrainingProgramBox.ForeColor = Color.White;
             TrainingProgramBox.FormattingEnabled = true;
-            TrainingProgramBox.Location = new Point(140, 110);
+            TrainingProgramBox.Location = new Point(180, 107);
             TrainingProgramBox.Name = "TrainingProgramBox";
-            TrainingProgramBox.Size = new Size(228, 25);
+            TrainingProgramBox.Size = new Size(300, 31);
             TrainingProgramBox.TabIndex = 6;
             TrainingProgramBox.SelectedIndexChanged += TrainingProgramBox_SelectedIndexChanged;
             // 
@@ -141,58 +468,71 @@
             DataGroupBox.Controls.Add(TrainingProgramBox);
             DataGroupBox.Controls.Add(TrainingProgramlbl);
             DataGroupBox.Controls.Add(StartDateLbl);
-            DataGroupBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DataGroupBox.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            DataGroupBox.ForeColor = Color.White;
             DataGroupBox.Location = new Point(33, 25);
             DataGroupBox.Name = "DataGroupBox";
-            DataGroupBox.Size = new Size(601, 283);
+            DataGroupBox.Size = new Size(540, 290);
             DataGroupBox.TabIndex = 7;
             DataGroupBox.TabStop = false;
             DataGroupBox.Text = "Trainee Subscription";
             // 
             // MonthsCount
             // 
-            MonthsCount.Location = new Point(100, 226);
+            MonthsCount.BackColor = Color.FromArgb(25, 45, 75);
+            MonthsCount.ForeColor = Color.White;
+            MonthsCount.Location = new Point(180, 228);
             MonthsCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             MonthsCount.Name = "MonthsCount";
-            MonthsCount.Size = new Size(268, 25);
+            MonthsCount.Size = new Size(120, 30);
             MonthsCount.TabIndex = 10;
             MonthsCount.Value = new decimal(new int[] { 1, 0, 0, 0 });
             MonthsCount.ValueChanged += MonthsCount_ValueChanged;
             // 
             // StartDatePicker
             // 
-            StartDatePicker.Location = new Point(100, 165);
+            StartDatePicker.Format = DateTimePickerFormat.Short;
+            StartDatePicker.Location = new Point(180, 165);
             StartDatePicker.Name = "StartDatePicker";
-            StartDatePicker.Size = new Size(268, 25);
+            StartDatePicker.Size = new Size(300, 30);
             StartDatePicker.TabIndex = 9;
             // 
             // TraineeIdExist
             // 
-            TraineeIdExist.BackColor = SystemColors.Control;
+            TraineeIdExist.BackColor = Color.FromArgb(5, 15, 35);
             TraineeIdExist.BorderStyle = BorderStyle.None;
-            TraineeIdExist.ForeColor = Color.Red;
-            TraineeIdExist.Location = new Point(95, 72);
+            TraineeIdExist.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
+            TraineeIdExist.ForeColor = Color.FromArgb(255, 80, 80);
+            TraineeIdExist.Location = new Point(180, 75);
             TraineeIdExist.Name = "TraineeIdExist";
-            TraineeIdExist.Size = new Size(237, 18);
+            TraineeIdExist.ReadOnly = true;
+            TraineeIdExist.Size = new Size(300, 20);
             TraineeIdExist.TabIndex = 8;
             // 
             // TraineeIdBox
             // 
-            TraineeIdBox.Location = new Point(95, 35);
+            TraineeIdBox.BackColor = Color.FromArgb(25, 45, 75);
+            TraineeIdBox.BorderStyle = BorderStyle.FixedSingle;
+            TraineeIdBox.ForeColor = Color.White;
+            TraineeIdBox.Location = new Point(180, 42);
             TraineeIdBox.Name = "TraineeIdBox";
-            TraineeIdBox.Size = new Size(273, 25);
+            TraineeIdBox.Size = new Size(300, 30);
             TraineeIdBox.TabIndex = 7;
             TraineeIdBox.TextChanged += TraineeIdBox_TextChanged;
             // 
             // Subscribe_PayBtn
             // 
-            Subscribe_PayBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Subscribe_PayBtn.Location = new Point(207, 647);
+            Subscribe_PayBtn.BackColor = Color.FromArgb(20, 110, 210);
+            Subscribe_PayBtn.FlatAppearance.BorderSize = 0;
+            Subscribe_PayBtn.FlatStyle = FlatStyle.Flat;
+            Subscribe_PayBtn.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            Subscribe_PayBtn.ForeColor = Color.White;
+            Subscribe_PayBtn.Location = new Point(200, 640);
             Subscribe_PayBtn.Name = "Subscribe_PayBtn";
-            Subscribe_PayBtn.Size = new Size(153, 43);
+            Subscribe_PayBtn.Size = new Size(210, 50);
             Subscribe_PayBtn.TabIndex = 8;
-            Subscribe_PayBtn.Text = "Subscribe &  Pay";
-            Subscribe_PayBtn.UseVisualStyleBackColor = true;
+            Subscribe_PayBtn.Text = "Subscribe & Pay";
+            Subscribe_PayBtn.UseVisualStyleBackColor = false;
             Subscribe_PayBtn.Click += Subscribe_PayBtn_Click;
             // 
             // PaymentGBox
@@ -207,10 +547,11 @@
             PaymentGBox.Controls.Add(MoneyAmount);
             PaymentGBox.Controls.Add(label4);
             PaymentGBox.Controls.Add(DiscountLbl);
-            PaymentGBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PaymentGBox.Location = new Point(41, 330);
+            PaymentGBox.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            PaymentGBox.ForeColor = Color.White;
+            PaymentGBox.Location = new Point(33, 335);
             PaymentGBox.Name = "PaymentGBox";
-            PaymentGBox.Size = new Size(593, 264);
+            PaymentGBox.Size = new Size(540, 275);
             PaymentGBox.TabIndex = 9;
             PaymentGBox.TabStop = false;
             PaymentGBox.Text = "Subscription Payment";
@@ -218,9 +559,10 @@
             // radioInstaPay
             // 
             radioInstaPay.AutoSize = true;
-            radioInstaPay.Location = new Point(166, 224);
+            radioInstaPay.Font = new Font("Segoe UI", 9F);
+            radioInstaPay.Location = new Point(160, 230);
             radioInstaPay.Name = "radioInstaPay";
-            radioInstaPay.Size = new Size(78, 21);
+            radioInstaPay.Size = new Size(84, 24);
             radioInstaPay.TabIndex = 12;
             radioInstaPay.Text = "InstaPay";
             radioInstaPay.UseVisualStyleBackColor = true;
@@ -228,9 +570,10 @@
             // radioCreditCard
             // 
             radioCreditCard.AutoSize = true;
-            radioCreditCard.Location = new Point(330, 224);
+            radioCreditCard.Font = new Font("Segoe UI", 9F);
+            radioCreditCard.Location = new Point(270, 230);
             radioCreditCard.Name = "radioCreditCard";
-            radioCreditCard.Size = new Size(95, 21);
+            radioCreditCard.Size = new Size(105, 24);
             radioCreditCard.TabIndex = 11;
             radioCreditCard.Text = "Credit Card";
             radioCreditCard.UseVisualStyleBackColor = true;
@@ -239,9 +582,10 @@
             // 
             radioCash.AutoSize = true;
             radioCash.Checked = true;
-            radioCash.Location = new Point(53, 224);
+            radioCash.Font = new Font("Segoe UI", 9F);
+            radioCash.Location = new Point(70, 230);
             radioCash.Name = "radioCash";
-            radioCash.Size = new Size(55, 21);
+            radioCash.Size = new Size(61, 24);
             radioCash.TabIndex = 10;
             radioCash.TabStop = true;
             radioCash.Text = "Cash";
@@ -250,59 +594,69 @@
             // PaymentMethodLbl
             // 
             PaymentMethodLbl.AutoSize = true;
-            PaymentMethodLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PaymentMethodLbl.Location = new Point(7, 187);
+            PaymentMethodLbl.ForeColor = Color.FromArgb(100, 150, 240);
+            PaymentMethodLbl.Location = new Point(15, 195);
             PaymentMethodLbl.Name = "PaymentMethodLbl";
-            PaymentMethodLbl.Padding = new Padding(2);
-            PaymentMethodLbl.Size = new Size(130, 21);
+            PaymentMethodLbl.Size = new Size(153, 23);
             PaymentMethodLbl.TabIndex = 9;
-            PaymentMethodLbl.Text = "Payment Method : ";
+            PaymentMethodLbl.Text = "Payment Method:";
             // 
             // NetAmount
             // 
-            NetAmount.Location = new Point(132, 134);
+            NetAmount.BackColor = Color.FromArgb(20, 50, 90);
+            NetAmount.BorderStyle = BorderStyle.FixedSingle;
+            NetAmount.ForeColor = Color.FromArgb(0, 255, 150);
+            NetAmount.Location = new Point(190, 142);
             NetAmount.Name = "NetAmount";
             NetAmount.ReadOnly = true;
-            NetAmount.Size = new Size(228, 25);
+            NetAmount.Size = new Size(290, 30);
             NetAmount.TabIndex = 8;
             // 
             // NetAmountLbl
             // 
             NetAmountLbl.AutoSize = true;
-            NetAmountLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            NetAmountLbl.Location = new Point(7, 137);
+            NetAmountLbl.ForeColor = Color.FromArgb(100, 150, 240);
+            NetAmountLbl.Location = new Point(15, 145);
             NetAmountLbl.Name = "NetAmountLbl";
-            NetAmountLbl.Padding = new Padding(2);
-            NetAmountLbl.Size = new Size(127, 21);
+            NetAmountLbl.Size = new Size(156, 23);
             NetAmountLbl.TabIndex = 7;
-            NetAmountLbl.Text = "Net Paid Amount: ";
+            NetAmountLbl.Text = "Net Paid Amount:";
             // 
             // DiscountAmount
             // 
-            DiscountAmount.Location = new Point(103, 92);
+            DiscountAmount.BackColor = Color.FromArgb(25, 45, 75);
+            DiscountAmount.BorderStyle = BorderStyle.FixedSingle;
+            DiscountAmount.ForeColor = Color.White;
+            DiscountAmount.Location = new Point(190, 92);
             DiscountAmount.Name = "DiscountAmount";
             DiscountAmount.ReadOnly = true;
-            DiscountAmount.Size = new Size(257, 25);
+            DiscountAmount.Size = new Size(290, 30);
             DiscountAmount.TabIndex = 6;
             // 
             // MoneyAmount
             // 
-            MoneyAmount.Location = new Point(151, 48);
+            MoneyAmount.BackColor = Color.FromArgb(25, 45, 75);
+            MoneyAmount.BorderStyle = BorderStyle.FixedSingle;
+            MoneyAmount.ForeColor = Color.White;
+            MoneyAmount.Location = new Point(190, 42);
             MoneyAmount.Name = "MoneyAmount";
             MoneyAmount.ReadOnly = true;
-            MoneyAmount.Size = new Size(209, 25);
+            MoneyAmount.Size = new Size(290, 30);
             MoneyAmount.TabIndex = 5;
             // 
             // TraineeSubscriptionFormcs
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 749);
+            BackColor = Color.FromArgb(5, 15, 35);
+            ClientSize = new Size(620, 720);
             Controls.Add(PaymentGBox);
             Controls.Add(Subscribe_PayBtn);
             Controls.Add(DataGroupBox);
+            ForeColor = Color.White;
             Name = "TraineeSubscriptionFormcs";
-            Text = "TraineeSubscriptionFormcs";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Gym System - Subscription Management";
             Load += TraineeSubscriptionFormcs_Load;
             DataGroupBox.ResumeLayout(false);
             DataGroupBox.PerformLayout();
