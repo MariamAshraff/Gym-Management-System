@@ -169,17 +169,30 @@ namespace Gym_Management_System
         {
             if (e.RowIndex < 0) return;
 
-            // ✅ اقرأ من الـ DTO مش من الـ Trainer
-            var list = dgvTrainers.DataSource as List<TrainerDisplayDto>;
-            if (list == null) return;
+            var row = dgvTrainers.Rows[e.RowIndex];
 
-            var dto = list[e.RowIndex];
+            _selectedId = Convert.ToInt32(row.Cells["Id"].Value);
+            txtName.Text = row.Cells["Name"].Value?.ToString();
+            txtPhone.Text = row.Cells["Phone"].Value?.ToString();
+            txtSpecialty.Text = row.Cells["Specialty"].Value?.ToString();
+            txtSalary.Text = row.Cells["Salary"].Value?.ToString();
+        }
+        private void dgvTrainers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-            _selectedId = dto.Id;
-            txtName.Text = dto.Name;
-            txtPhone.Text = dto.Phone;
-            txtSpecialty.Text = dto.Specialty;
-            txtSalary.Text = dto.Salary.ToString();
+        }
+
+        private void dgvTrainers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var row = dgvTrainers.Rows[e.RowIndex];
+
+            _selectedId = Convert.ToInt32(row.Cells["Id"].Value);
+            txtName.Text = row.Cells["Name"].Value?.ToString();
+            txtPhone.Text = row.Cells["Phone"].Value?.ToString();
+            txtSpecialty.Text = row.Cells["Specialty"].Value?.ToString();
+            txtSalary.Text = row.Cells["Salary"].Value?.ToString();
         }
     }
 }

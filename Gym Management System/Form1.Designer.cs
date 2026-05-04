@@ -229,7 +229,8 @@
             dgvTrainers.Name = "dgvTrainers";
             dgvTrainers.Size = new Size(388, 251);
             dgvTrainers.TabIndex = 9;
-          
+            dgvTrainers.CellContentClick += dgvTrainers_CellContentClick;
+            dgvTrainers.CellDoubleClick += dgvTrainers_CellDoubleClick;
             // 
             // Form1
             // 

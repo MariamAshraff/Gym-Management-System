@@ -19,16 +19,16 @@ namespace Gym_Management_System
             Application.SetCompatibleTextRenderingDefault(false);
 
             // ✅ كده بتمرر الـ Service صح
-            var context = new GymContext();
-            var trainerService = new TrainerService(context);
-            Application.Run(new Form1(trainerService));
+           var context = new GymContext();
+       var trainerService = new TrainerService(context);
+          Application.Run(new Form1(trainerService));
 
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-//            ApplicationConfiguration.Initialize();
+           //  To customize application configuration such as set high DPI settings or default font,
+         //    see https://aka.ms/applicationconfiguration.
+//           ApplicationConfiguration.Initialize();
           //  Application.Run(new StartForm());
-          //  ITraineesService traineesService = new TraineesService();
-           // Application.Run(new TraineesForm(traineesService));
+      //   ITrainerService trainerService = new TrainerService (context);
+           // Application.Run(new Form1();
 
 
         }
