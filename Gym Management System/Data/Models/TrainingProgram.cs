@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gym_Management_System.Data.Models
 {
-    public class Subscription
+    public class TrainingProgram
     {
         [Key]
         public int Id { get; set; }

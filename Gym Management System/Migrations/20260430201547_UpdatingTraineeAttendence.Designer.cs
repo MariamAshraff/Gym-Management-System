@@ -4,6 +4,7 @@ using Gym_Management_System.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gym_Management_System.Migrations
 {
     [DbContext(typeof(GymContext))]
-    partial class GymContextModelSnapshot : ModelSnapshot
+    [Migration("20260430201547_UpdatingTraineeAttendence")]
+    partial class UpdatingTraineeAttendence
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -130,6 +133,9 @@ namespace Gym_Management_System.Migrations
                     b.Property<DateTime>("CheckIn")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("TraineeSubscriptionId")
                         .HasColumnType("int");
 
@@ -154,13 +160,7 @@ namespace Gym_Management_System.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("LastCheckIn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Months")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PackageTotalDays")
+                    b.Property<int>("PackageDays")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
