@@ -21,6 +21,7 @@ namespace Gym_Management_System
         // ==================== Events ====================
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             LoadTrainers();
         }
 

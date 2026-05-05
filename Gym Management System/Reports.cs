@@ -141,7 +141,7 @@ namespace Gym_Management_System
             }
         }
 
-        
+
         private void btnRevenue_Click(object sender, EventArgs e)
         {
             try
@@ -164,6 +164,11 @@ namespace Gym_Management_System
             {
                 MessageBox.Show("حدث خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Reports_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

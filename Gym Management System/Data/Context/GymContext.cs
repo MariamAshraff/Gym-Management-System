@@ -7,8 +7,8 @@ namespace Gym_Management_System.Data.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=GymSystem; Integrated Security=True; TrustServerCertificate=True");
-            //optionsBuilder.UseSqlServer("Data Source=LAPTOP-C0VV8CJS\\MSSQLSERVER29;Initial Catalog=GymSystem; Integrated Security=True; TrustServerCertificate=True");
+            //optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=GymSystem; Integrated Security=True; TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=LAPTOP-C0VV8CJS\\MSSQLSERVER29;Initial Catalog=GymSystem; Integrated Security=True; TrustServerCertificate=True");
         }
 
         public DbSet<User> Users { get; set; }

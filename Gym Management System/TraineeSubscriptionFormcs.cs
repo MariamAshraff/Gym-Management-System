@@ -44,6 +44,7 @@ namespace Gym_Management_System
 
         private void TraineeSubscriptionFormcs_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             table = new TableLayoutPanel();
 
             table.Dock = DockStyle.Fill;
