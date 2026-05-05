@@ -152,9 +152,12 @@ namespace Gym_Management_System
                 TraineeIdBox.Text = filtered;
                 TraineeIdBox.SelectionStart = Math.Max(0, cursor - 1);
             }
+            if(TraineeIdBox.Text  != "") 
+                UpdateData();
         }
         private void UpdateData()
         {
+            TraineeIdExist.Text = "";
             var selectedProgramId = Convert.ToInt32(TrainingProgramBox.SelectedValue);
             var selectedTraineeId = Convert.ToInt32(TraineeIdBox.Text);
             var selectedProgram = _TPService.GetTrainingPbyId(selectedProgramId);
