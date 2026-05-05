@@ -66,5 +66,10 @@ namespace Gym_Management_System
             base.OnFormClosed(e);
             Application.Exit();
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

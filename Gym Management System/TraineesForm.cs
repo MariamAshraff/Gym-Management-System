@@ -125,6 +125,7 @@ namespace Gym_Management_System
         // Form Load
         private void TraineesForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             ApplyTheme();
             LoadData();
             LoadStatus();
