@@ -1,0 +1,28 @@
+Trainer Form = Form1.cs  (Done)
+
+
+Using tabs/panels/buttons
+Receptionnest:-
+
+1-Trainees form
+ 
+2-Subsrription(Done)
+
+3-Attendeance
+
+----
+public void AddUser(string username, string password, string role)
+{
+    var user = new User
+    {
+        Username = username,
+        PasswordHash = password,
+        Role = role
+    };
+
+    _context.Users.Add(user);
+    _context.SaveChanges();
+} 
+----------------
+we need  RemoveUser method
+----------------

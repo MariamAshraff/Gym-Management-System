@@ -2,7 +2,7 @@
 using Gym_Management_System.Data.Context;
 using Gym_Management_System.Data.Models;
 
-using Gym_Management_System.Services.Implementation; // تأكد إذا كان المسار Implementation أو Services
+using Gym_Management_System.Services.Implementation; //  Implementation or Services
 using Gym_Management_System.Services.Interfaces;
 using Gym_Management_System.Views;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +18,7 @@ namespace Gym_Management_System
         [STAThread]
         static void Main()
         {
-
+            //var context = new GymContext();
             //Seeding Admin automatically before program run
             using (var context = new GymContext())
             {
@@ -42,8 +42,7 @@ namespace Gym_Management_System
             //var context = new GymContext();
             //var trainerService = new TrainerService(context);
             Application.Run((new LoginForm()));
-            var context = new GymContext();
-            var trainerService = new TrainerService(context);
+            //var trainerService = new TrainerService(context);
             //Application.Run(new TraineeSubscriptionFormcs
             //    (new TraineeSubscriptionService(context),
             //     new TrainingProgramService(context),
