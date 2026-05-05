@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             TopPanel = new Panel();
-            DashboardBtn = new Button();
+            TrainersForm = new Button();
             UsersBtn = new Button();
             LogoutBtn = new Button();
             ReportsBtn = new Button();
             SidebarPanel = new Panel();
+            TraineesBtn = new Button();
+            TraineesAttendBtn = new Button();
+            Subscriptions = new Button();
             MainPanel = new Panel();
             panelUsers = new Panel();
+            RemoveUserBtn = new Button();
             dgvUsers = new DataGridView();
             AddUserBtn = new Button();
             UserNameLabel = new Label();
@@ -44,8 +48,6 @@
             RoleLabel = new Label();
             cmbRole = new ComboBox();
             UserNameTextBox = new TextBox();
-            panelDashboard = new Panel();
-            panelReports = new Panel();
             SidebarPanel.SuspendLayout();
             MainPanel.SuspendLayout();
             panelUsers.SuspendLayout();
@@ -59,22 +61,23 @@
             TopPanel.Name = "TopPanel";
             TopPanel.Size = new Size(800, 100);
             TopPanel.TabIndex = 1;
+            //TopPanel.Paint += TopPanel_Paint;
             // 
-            // DashboardBtn
+            // TrainersForm
             // 
-            DashboardBtn.Location = new Point(35, 27);
-            DashboardBtn.Name = "DashboardBtn";
-            DashboardBtn.Size = new Size(75, 23);
-            DashboardBtn.TabIndex = 0;
-            DashboardBtn.Text = "Dashboard";
-            DashboardBtn.UseVisualStyleBackColor = true;
-            DashboardBtn.Click += DashboardBtn_Click;
+            TrainersForm.Location = new Point(35, 6);
+            TrainersForm.Name = "TrainersForm";
+            TrainersForm.Size = new Size(110, 23);
+            TrainersForm.TabIndex = 0;
+            TrainersForm.Text = "Trainers";
+            TrainersForm.UseVisualStyleBackColor = true;
+            TrainersForm.Click += TrainersForm_Click;
             // 
             // UsersBtn
             // 
-            UsersBtn.Location = new Point(35, 89);
+            UsersBtn.Location = new Point(35, 46);
             UsersBtn.Name = "UsersBtn";
-            UsersBtn.Size = new Size(75, 23);
+            UsersBtn.Size = new Size(110, 23);
             UsersBtn.TabIndex = 1;
             UsersBtn.Text = "Users";
             UsersBtn.UseVisualStyleBackColor = true;
@@ -82,7 +85,7 @@
             // 
             // LogoutBtn
             // 
-            LogoutBtn.Location = new Point(35, 196);
+            LogoutBtn.Location = new Point(35, 440);
             LogoutBtn.Name = "LogoutBtn";
             LogoutBtn.Size = new Size(75, 23);
             LogoutBtn.TabIndex = 0;
@@ -92,9 +95,9 @@
             // 
             // ReportsBtn
             // 
-            ReportsBtn.Location = new Point(35, 142);
+            ReportsBtn.Location = new Point(35, 91);
             ReportsBtn.Name = "ReportsBtn";
-            ReportsBtn.Size = new Size(75, 23);
+            ReportsBtn.Size = new Size(110, 23);
             ReportsBtn.TabIndex = 2;
             ReportsBtn.Text = "Reports";
             ReportsBtn.UseVisualStyleBackColor = true;
@@ -102,30 +105,62 @@
             // 
             // SidebarPanel
             // 
+            SidebarPanel.Controls.Add(TraineesBtn);
+            SidebarPanel.Controls.Add(TraineesAttendBtn);
+            SidebarPanel.Controls.Add(Subscriptions);
             SidebarPanel.Controls.Add(LogoutBtn);
-            SidebarPanel.Controls.Add(DashboardBtn);
+            SidebarPanel.Controls.Add(TrainersForm);
             SidebarPanel.Controls.Add(ReportsBtn);
             SidebarPanel.Controls.Add(UsersBtn);
             SidebarPanel.Dock = DockStyle.Left;
             SidebarPanel.Location = new Point(0, 100);
             SidebarPanel.Name = "SidebarPanel";
-            SidebarPanel.Size = new Size(200, 350);
+            SidebarPanel.Size = new Size(200, 475);
             SidebarPanel.TabIndex = 2;
+            // 
+            // TraineesBtn
+            // 
+            TraineesBtn.Location = new Point(35, 217);
+            TraineesBtn.Name = "TraineesBtn";
+            TraineesBtn.Size = new Size(110, 23);
+            TraineesBtn.TabIndex = 13;
+            TraineesBtn.Text = "Trainee";
+            TraineesBtn.UseVisualStyleBackColor = true;
+            TraineesBtn.Click += TraineesBtn_Click;
+            // 
+            // TraineesAttendBtn
+            // 
+            TraineesAttendBtn.Location = new Point(35, 171);
+            TraineesAttendBtn.Name = "TraineesAttendBtn";
+            TraineesAttendBtn.Size = new Size(110, 23);
+            TraineesAttendBtn.TabIndex = 12;
+            TraineesAttendBtn.Text = "Attendance";
+            TraineesAttendBtn.UseVisualStyleBackColor = true;
+            TraineesAttendBtn.Click += TraineesAttendBtn_Click;
+            // 
+            // Subscriptions
+            // 
+            Subscriptions.Location = new Point(35, 133);
+            Subscriptions.Name = "Subscriptions";
+            Subscriptions.Size = new Size(110, 23);
+            Subscriptions.TabIndex = 12;
+            Subscriptions.Text = "Subscriptions";
+            Subscriptions.UseVisualStyleBackColor = true;
+            Subscriptions.Click += Subscriptions_Click;
             // 
             // MainPanel
             // 
             MainPanel.Controls.Add(panelUsers);
-            MainPanel.Controls.Add(panelDashboard);
-            MainPanel.Controls.Add(panelReports);
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.Location = new Point(200, 100);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(600, 350);
+            MainPanel.Size = new Size(600, 475);
             MainPanel.TabIndex = 3;
             // 
             // panelUsers
             // 
             panelUsers.BackColor = SystemColors.ActiveCaption;
+            panelUsers.Controls.Add(RemoveUserBtn);
             panelUsers.Controls.Add(dgvUsers);
             panelUsers.Controls.Add(AddUserBtn);
             panelUsers.Controls.Add(UserNameLabel);
@@ -134,26 +169,39 @@
             panelUsers.Controls.Add(RoleLabel);
             panelUsers.Controls.Add(cmbRole);
             panelUsers.Controls.Add(UserNameTextBox);
-            panelUsers.Location = new Point(9, 18);
+            panelUsers.Location = new Point(9, 6);
             panelUsers.Name = "panelUsers";
-            panelUsers.Size = new Size(347, 311);
+            panelUsers.Size = new Size(579, 466);
             panelUsers.TabIndex = 0;
+            // 
+            // RemoveUserBtn
+            // 
+            RemoveUserBtn.Location = new Point(205, 152);
+            RemoveUserBtn.Name = "RemoveUserBtn";
+            RemoveUserBtn.Size = new Size(75, 23);
+            RemoveUserBtn.TabIndex = 11;
+            RemoveUserBtn.Text = "Remove";
+            RemoveUserBtn.UseVisualStyleBackColor = true;
+            RemoveUserBtn.Click += RemoveUserBtn_Click;
             // 
             // dgvUsers
             // 
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsers.Location = new Point(0, 152);
+            dgvUsers.Location = new Point(3, 211);
+            dgvUsers.MultiSelect = false;
             dgvUsers.Name = "dgvUsers";
-            dgvUsers.Size = new Size(347, 159);
+            dgvUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUsers.Size = new Size(573, 246);
             dgvUsers.TabIndex = 10;
+            dgvUsers.CellContentClick += dgvUsers_CellContentClick;
             // 
             // AddUserBtn
             // 
-            AddUserBtn.Location = new Point(81, 123);
+            AddUserBtn.Location = new Point(81, 152);
             AddUserBtn.Name = "AddUserBtn";
             AddUserBtn.Size = new Size(75, 23);
             AddUserBtn.TabIndex = 4;
-            AddUserBtn.Text = "Add User";
+            AddUserBtn.Text = "Add";
             AddUserBtn.UseVisualStyleBackColor = true;
             AddUserBtn.Click += AddUserBtn_Click;
             // 
@@ -179,7 +227,7 @@
             // 
             PasswordTextbox.Location = new Point(81, 55);
             PasswordTextbox.Name = "PasswordTextbox";
-            PasswordTextbox.Size = new Size(100, 23);
+            PasswordTextbox.Size = new Size(199, 23);
             PasswordTextbox.TabIndex = 7;
             // 
             // RoleLabel
@@ -196,37 +244,21 @@
             cmbRole.FormattingEnabled = true;
             cmbRole.Location = new Point(81, 94);
             cmbRole.Name = "cmbRole";
-            cmbRole.Size = new Size(121, 23);
+            cmbRole.Size = new Size(199, 23);
             cmbRole.TabIndex = 9;
             // 
             // UserNameTextBox
             // 
             UserNameTextBox.Location = new Point(81, 10);
             UserNameTextBox.Name = "UserNameTextBox";
-            UserNameTextBox.Size = new Size(100, 23);
+            UserNameTextBox.Size = new Size(199, 23);
             UserNameTextBox.TabIndex = 5;
-            // 
-            // panelDashboard
-            // 
-            panelDashboard.Location = new Point(386, 18);
-            panelDashboard.Name = "panelDashboard";
-            panelDashboard.Size = new Size(89, 40);
-            panelDashboard.TabIndex = 0;
-            panelDashboard.Visible = false;
-            // 
-            // panelReports
-            // 
-            panelReports.Location = new Point(386, 64);
-            panelReports.Name = "panelReports";
-            panelReports.Size = new Size(89, 48);
-            panelReports.TabIndex = 0;
-            panelReports.Visible = false;
             // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 575);
             Controls.Add(MainPanel);
             Controls.Add(SidebarPanel);
             Controls.Add(TopPanel);
@@ -263,5 +295,10 @@
         private TextBox PasswordTextbox;
         private Label PasswordLabel;
         private DataGridView dgvUsers;
+        private Button RemoveUserBtn;
+        private Button TrainersForm;
+        private Button Subscriptions;
+        private Button TraineesAttendBtn;
+        private Button TraineesBtn;
     }
 }

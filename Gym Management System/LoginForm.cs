@@ -60,5 +60,11 @@ namespace Gym_Management_System
                 MessageBox.Show("Invalid Login");
             }
         }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+            Application.Exit();
+        }
     }
 }
