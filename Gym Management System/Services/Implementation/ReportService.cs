@@ -11,9 +11,14 @@ namespace Gym_Management_System.Services.Implementation
     {
         private readonly GymContext _gymContext;
 
+        private readonly ITraineeSubscriptionService traineeSubscriptionService;
+
         public ReportService(GymContext gymContext)
         {
             _gymContext = gymContext;
+
+            traineeSubscriptionService = new TraineeSubscriptionService(gymContext);
+
         }
 
         // حضور النهارده
@@ -76,7 +81,8 @@ namespace Gym_Management_System.Services.Implementation
         public List<AttendanceReportDto> GetAttendanceReport()
         {
             return _gymContext.TraineeAttendances
-                .Include(a => a.TraineeSubscription.Trainee)
+                .Include(a => a.TraineeSubscription)
+                    .ThenInclude(ts => ts.Trainee)
                 .OrderByDescending(a => a.CheckIn)
                 .Take(50)
                 .Select(a => new AttendanceReportDto
@@ -86,6 +92,8 @@ namespace Gym_Management_System.Services.Implementation
                 })
                 .ToList();
         }
+      
+        
 
         public List<Trainer> GetTrainersWithTrainees()
         {
