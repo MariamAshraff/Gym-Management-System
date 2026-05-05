@@ -20,29 +20,30 @@ namespace Gym_Management_System
         {
 
             //Seeding Admin automatically before program run
-            using (var context = new GymContext())
-            {
-                if (!context.Users.Any())
-                {
-                    context.Users.Add(new User
-                    {
-                        Username = "admin",
-                        PasswordHash = "123",
-                        Role = "Admin"
-                    });
+           // using (var context = new GymContext())
+        //    {
+           //     if (!context.Users.Any())
+            //    {
+                //    context.Users.Add(new User
+                //    {
+               //         Username = "admin",
+                 //       PasswordHash = "123",
+                  //      Role = "Admin"
+                  //  });
 
-                    context.SaveChanges();
-                }
-            }
+                  //  context.SaveChanges();
+               // }
+//}
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             // ✅ كده بتمرر الـ Service صح
-<<<<<<< HEAD
-           var context = new GymContext();
+
+          var context = new GymContext();
+            Application.Run(new Reports(context));
        var trainerService = new TrainerService(context);
-          Application.Run(new Form1(trainerService));
+        //  Application.Run(new Form1(trainerService));
 
            //  To customize application configuration such as set high DPI settings or default font,
          //    see https://aka.ms/applicationconfiguration.
@@ -50,12 +51,12 @@ namespace Gym_Management_System
           //  Application.Run(new StartForm());
       //   ITrainerService trainerService = new TrainerService (context);
            // Application.Run(new Form1();
-=======
+
             //var context = new GymContext();
             //var trainerService = new TrainerService(context);
-            Application.Run((new LoginForm()));
-            var context = new GymContext();
-            var trainerService = new TrainerService(context);
+      //      Application.Run((new LoginForm()));
+        //    var context = new GymContext();
+//var trainerService = new TrainerService(context);
             //Application.Run(new TraineeSubscriptionFormcs
             //    (new TraineeSubscriptionService(context),
             //     new TrainingProgramService(context),
@@ -76,7 +77,7 @@ namespace Gym_Management_System
             //Application.Run(new TraineesForm(traineesService));
             //ITrainerService trainersService = new TrainerService(context);
             //Application.Run(new Form1(trainersService));
->>>>>>> c75c1ed521516b3a2c01ac7d6eb35f4b68eea8a9
+
 
 
         }

@@ -177,23 +177,9 @@ namespace Gym_Management_System
             txtSpecialty.Text = row.Cells["Specialty"].Value?.ToString();
             txtSalary.Text = row.Cells["Salary"].Value?.ToString();
         }
-        private void dgvTrainers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+       
 
-        }
-
-        private void dgvTrainers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-
-            var row = dgvTrainers.Rows[e.RowIndex];
-
-            _selectedId = Convert.ToInt32(row.Cells["Id"].Value);
-            txtName.Text = row.Cells["Name"].Value?.ToString();
-            txtPhone.Text = row.Cells["Phone"].Value?.ToString();
-            txtSpecialty.Text = row.Cells["Specialty"].Value?.ToString();
-            txtSalary.Text = row.Cells["Salary"].Value?.ToString();
-        }
+      
     }
 }
         
