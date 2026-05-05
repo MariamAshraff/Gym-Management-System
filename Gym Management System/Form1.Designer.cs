@@ -588,7 +588,11 @@ namespace Gym_Management_System
             dgvTrainers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTrainers.Size = new Size(600, 400);
             dgvTrainers.TabIndex = 9;
+
+          
+
             dgvTrainers.CellDoubleClick += dgvTrainers_CellClick;
+
             // 
             // Form1
             // 
