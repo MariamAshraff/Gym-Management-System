@@ -133,6 +133,7 @@ namespace Gym_Management_System
                 PaidAt = DateTime.Now,
                 TraineeSubscriptionId = NewSubscription.Id
             });
+            MessageBox.Show("Subscirbed and paid", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             #endregion
 
 

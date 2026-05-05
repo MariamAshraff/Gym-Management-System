@@ -72,6 +72,7 @@ namespace Gym_Management_System
             if (FormElligibleToAddAttendence)
             {
                 _attendenceService.AddAttendence(Convert.ToInt32(SubscriptionIdBox.Text));
+                MessageBox.Show("Attendence Added For Today!","Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ValidateForm();
             }
             else
