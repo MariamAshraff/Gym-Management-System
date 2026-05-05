@@ -31,6 +31,7 @@ namespace Gym_Management_System
 
         private void TraineeAttendenceForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             table = new TableLayoutPanel();
 
             table.Dock = DockStyle.Fill;
@@ -65,6 +66,7 @@ namespace Gym_Management_System
         void ClearValidation()
         {
             ValidateSubscriptionId.Text = "";
+            ValidateLastCheckin.Text = "";
         }
 
         private void CreateAttendencBtn_Click(object sender, EventArgs e)
@@ -111,6 +113,7 @@ namespace Gym_Management_System
                 {
                     CardStatusBox.BackColor = Color.Red;
                     CardStatusBox.Text = "Frozen | Expired";
+                    CreateAttendencBtn.Enabled = false;
                 }
                 if (subscription.UsedDays == 0)
                 {

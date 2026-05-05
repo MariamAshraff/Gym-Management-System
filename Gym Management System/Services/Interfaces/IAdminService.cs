@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gym_Management_System.Services.Interfaces
 {
-    internal interface ITraineeSubscription
+    internal interface IAdminService
     {
+        void AddUser(string username, string password, string role);
+
     }
 }

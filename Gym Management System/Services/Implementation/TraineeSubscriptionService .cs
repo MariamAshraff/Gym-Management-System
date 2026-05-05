@@ -65,5 +65,14 @@ namespace Gym_Management_System.Services.Implementation
             _context.TraineeSubscriptions.Remove(subscription);
             _context.SaveChanges();
         }
+
+        public List<TraineeSubscription> GetActivteSubscription()
+        {
+            return _context.TraineeSubscriptions.Where(t => t.IsActive == true).ToList();
+        }
+        public bool AlreadySubscribedInProgram(int programId, int traineeId)
+        {
+            return _context.TraineeSubscriptions.Any(p=> p.TraineeId == traineeId && p.TrainingProgramId  == programId); 
+        }
     }
 }

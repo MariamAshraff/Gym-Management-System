@@ -21,6 +21,7 @@ namespace Gym_Management_System
         // ==================== Events ====================
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             LoadTrainers();
         }
 
@@ -169,18 +170,17 @@ namespace Gym_Management_System
         {
             if (e.RowIndex < 0) return;
 
-            // ✅ اقرأ من الـ DTO مش من الـ Trainer
-            var list = dgvTrainers.DataSource as List<TrainerDisplayDto>;
-            if (list == null) return;
+            var row = dgvTrainers.Rows[e.RowIndex];
 
-            var dto = list[e.RowIndex];
-
-            _selectedId = dto.Id;
-            txtName.Text = dto.Name;
-            txtPhone.Text = dto.Phone;
-            txtSpecialty.Text = dto.Specialty;
-            txtSalary.Text = dto.Salary.ToString();
+            _selectedId = Convert.ToInt32(row.Cells["Id"].Value);
+            txtName.Text = row.Cells["Name"].Value?.ToString();
+            txtPhone.Text = row.Cells["Phone"].Value?.ToString();
+            txtSpecialty.Text = row.Cells["Specialty"].Value?.ToString();
+            txtSalary.Text = row.Cells["Salary"].Value?.ToString();
         }
+       
+
+      
     }
 }
         
