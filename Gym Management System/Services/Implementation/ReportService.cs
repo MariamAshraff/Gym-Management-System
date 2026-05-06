@@ -1,5 +1,6 @@
 ﻿using Gym_Management_System.Data;
 using Gym_Management_System.Data.Context;
+using Gym_Management_System.Data.Enums;
 using Gym_Management_System.Data.Models;
 using Gym_Management_System.DTOs;
 using Gym_Management_System.Services.Interfaces;
@@ -31,8 +32,14 @@ namespace Gym_Management_System.Services.Implementation
         // اشتراكات شغالة دلوقتي
         public int GetActiveSubscriptionsCount()
         {
+            //return _gymContext.TraineeSubscriptions
+            //    .Count(ts => ts.EndDate >= DateTime.Today);
+            var today = DateTime.Today;
+
             return _gymContext.TraineeSubscriptions
-                .Count(ts => ts.EndDate >= DateTime.Today);
+                .Count(ts => ts.EndDate >= today
+                          && ts.IsActive
+                          && ts.Status == SubscriptionStatus.Active);
         }
 
         // إيرادات الشهر الحالي
@@ -80,11 +87,25 @@ namespace Gym_Management_System.Services.Implementation
         // تقرير حضور الأعضاء
         public List<AttendanceReportDto> GetAttendanceReport()
         {
+            //return _gymContext.TraineeAttendances
+            //    .Include(a => a.TraineeSubscription)
+            //        .ThenInclude(ts => ts.Trainee)
+            //    .OrderByDescending(a => a.CheckIn)
+            //    .Take(50)
+            //    .Select(a => new AttendanceReportDto
+            //    {
+            //        TraineeName = a.TraineeSubscription.Trainee.Name,
+            //        Date = a.CheckIn,
+            //    })
+            //    .ToList();
+            var today = DateTime.Today;
+            var tomorrow = today.AddDays(1);
+
             return _gymContext.TraineeAttendances
                 .Include(a => a.TraineeSubscription)
                     .ThenInclude(ts => ts.Trainee)
+                .Where(a => a.CheckIn >= today && a.CheckIn < tomorrow)
                 .OrderByDescending(a => a.CheckIn)
-                .Take(50)
                 .Select(a => new AttendanceReportDto
                 {
                     TraineeName = a.TraineeSubscription.Trainee.Name,

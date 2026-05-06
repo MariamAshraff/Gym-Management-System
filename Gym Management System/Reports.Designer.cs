@@ -282,7 +282,7 @@ namespace Gym_Management_System
             btnRevenue.Name = "btnRevenue";
             btnRevenue.Size = new Size(229, 80);
             btnRevenue.TabIndex = 4;
-            btnRevenue.Text = "💵 إيرادات الشهر";
+            btnRevenue.Text = " Monthly revenue";
             btnRevenue.UseVisualStyleBackColor = false;
             btnRevenue.Click += btnRevenue_Click;
             // 
@@ -299,7 +299,7 @@ namespace Gym_Management_System
             btnTrainers.Name = "btnTrainers";
             btnTrainers.Size = new Size(229, 80);
             btnTrainers.TabIndex = 3;
-            btnTrainers.Text = "📋 تقرير المدربين";
+            btnTrainers.Text = "Trainers Report";
             btnTrainers.UseVisualStyleBackColor = false;
             btnTrainers.Click += btnTrainers_Click;
             // 
@@ -316,7 +316,7 @@ namespace Gym_Management_System
             btnExpiredSubscriptions.Name = "btnExpiredSubscriptions";
             btnExpiredSubscriptions.Size = new Size(229, 80);
             btnExpiredSubscriptions.TabIndex = 2;
-            btnExpiredSubscriptions.Text = "❌ الاشتراكات المنتهية";
+            btnExpiredSubscriptions.Text = "Expired subscriptions";
             btnExpiredSubscriptions.UseVisualStyleBackColor = false;
             btnExpiredSubscriptions.Click += btnExpiredSubscriptions_Click;
             // 
@@ -333,7 +333,7 @@ namespace Gym_Management_System
             btnActiveSubscriptions.Name = "btnActiveSubscriptions";
             btnActiveSubscriptions.Size = new Size(229, 80);
             btnActiveSubscriptions.TabIndex = 1;
-            btnActiveSubscriptions.Text = "✅ الاشتراكات الفعالة";
+            btnActiveSubscriptions.Text = "Active Subscriptions";
             btnActiveSubscriptions.UseVisualStyleBackColor = false;
             btnActiveSubscriptions.Click += btnActiveSubscriptions_Click;
             // 
@@ -350,7 +350,7 @@ namespace Gym_Management_System
             btnAttendance.Name = "btnAttendance";
             btnAttendance.Size = new Size(229, 80);
             btnAttendance.TabIndex = 0;
-            btnAttendance.Text = "🕒 حضور اليوم";
+            btnAttendance.Text = "Today Attendance";
             btnAttendance.UseVisualStyleBackColor = false;
             btnAttendance.Click += btnAttendance_Click;
             // 
@@ -379,6 +379,7 @@ namespace Gym_Management_System
             IblTodayAttendance.TabIndex = 0;
             IblTodayAttendance.Text = "0";
             IblTodayAttendance.TextAlign = ContentAlignment.MiddleCenter;
+            IblTodayAttendance.Click += IblTodayAttendance_Click;
             // 
             // groupBox2
             // 
