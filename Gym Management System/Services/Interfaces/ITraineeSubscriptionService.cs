@@ -15,5 +15,6 @@ namespace Gym_Management_System.Services.Interfaces
         void Update(TraineeSubscription trineeSubscription);
         void Delete(int id);
         List<TraineeSubscription> GetActivteSubscription();
+        bool AlreadySubscribedInProgram(int programId , int traineeId);
     }
 }

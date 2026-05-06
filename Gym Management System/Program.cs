@@ -40,6 +40,21 @@ namespace Gym_Management_System
 
             // ✅ كده بتمرر الـ Service صح
 
+            //var context = new GymContext();
+            //var trainerService = new TrainerService(context);
+            //Application.Run(new TraineeSubscriptionFormcs
+            //    (new TraineeSubscriptionService(context),
+            //     new TrainingProgramService(context),
+            //     new TraineesService(context),
+            //     new OfferService(context),
+            //     new PaymentService(context),
+            //     new Service(context)));
+            //Application.Run(new TraineeAttendenceForm(
+            //    new TraineeAttendenceService(context),
+            //    new TraineeSubscriptionService(context),
+            //    new TraineesService(context)));
+
+
           var context = new GymContext();
             //Application.Run(new Reports(context));
        var trainerService = new TrainerService(context);

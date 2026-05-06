@@ -70,5 +70,9 @@ namespace Gym_Management_System.Services.Implementation
         {
             return _context.TraineeSubscriptions.Where(t => t.IsActive == true).ToList();
         }
+        public bool AlreadySubscribedInProgram(int programId, int traineeId)
+        {
+            return _context.TraineeSubscriptions.Any(p=> p.TraineeId == traineeId && p.TrainingProgramId  == programId); 
+        }
     }
 }

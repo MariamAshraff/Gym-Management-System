@@ -134,6 +134,7 @@ namespace Gym_Management_System
                 PaidAt = DateTime.Now,
                 TraineeSubscriptionId = NewSubscription.Id
             });
+            MessageBox.Show("Subscirbed and paid", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             #endregion
 
 
@@ -154,9 +155,15 @@ namespace Gym_Management_System
         }
         private void UpdateData()
         {
-            var selectedProgram = _TPService.GetTrainingPbyId(Convert.ToInt32(TrainingProgramBox.SelectedValue));
+            var selectedProgramId = Convert.ToInt32(TrainingProgramBox.SelectedValue);
+            var selectedTraineeId = Convert.ToInt32(TraineeIdBox.Text);
+            var selectedProgram = _TPService.GetTrainingPbyId(selectedProgramId);
             var offer = _offerService.GetOfferForProgram(selectedProgram!.Id);
-
+            if(_TSService.AlreadySubscribedInProgram(selectedProgramId , selectedTraineeId))
+            {
+                TraineeIdExist.Text = "Trainee already subscribed to this program";
+                Subscribe_PayBtn.Enabled = false;
+            }
             MoneyAmount.Text = $"{selectedProgram!.Price * MonthsCount.Value}";
             DiscountAmount.Text = offer == null ? "0" : $"{offer.DiscountPercentage}";
             if (offer == null)

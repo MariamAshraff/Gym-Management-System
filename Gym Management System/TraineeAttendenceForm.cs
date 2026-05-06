@@ -66,6 +66,7 @@ namespace Gym_Management_System
         void ClearValidation()
         {
             ValidateSubscriptionId.Text = "";
+            ValidateLastCheckin.Text = "";
         }
 
         private void CreateAttendencBtn_Click(object sender, EventArgs e)
@@ -73,6 +74,7 @@ namespace Gym_Management_System
             if (FormElligibleToAddAttendence)
             {
                 _attendenceService.AddAttendence(Convert.ToInt32(SubscriptionIdBox.Text));
+                MessageBox.Show("Attendence Added For Today!","Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ValidateForm();
             }
             else
@@ -111,6 +113,7 @@ namespace Gym_Management_System
                 {
                     CardStatusBox.BackColor = Color.Red;
                     CardStatusBox.Text = "Frozen | Expired";
+                    CreateAttendencBtn.Enabled = false;
                 }
                 if (subscription.UsedDays == 0)
                 {
