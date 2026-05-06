@@ -155,29 +155,62 @@ namespace Gym_Management_System
             if(TraineeIdBox.Text  != "") 
                 UpdateData();
         }
+        //private void UpdateData()
+        //{
+        //    TraineeIdExist.Text = "";
+        //    var selectedProgramId = Convert.ToInt32(TrainingProgramBox.SelectedValue);
+        //    var selectedTraineeId = Convert.ToInt32(TraineeIdBox.Text);
+        //    var selectedProgram = _TPService.GetTrainingPbyId(selectedProgramId);
+        //    var offer = _offerService.GetOfferForProgram(selectedProgram!.Id);
+        //    if(_TSService.AlreadySubscribedInProgram(selectedProgramId , selectedTraineeId))
+        //    {
+        //        TraineeIdExist.Text = "Trainee already subscribed to this program";
+        //        Subscribe_PayBtn.Enabled = false;
+        //    }
+        //    MoneyAmount.Text = $"{selectedProgram!.Price * MonthsCount.Value}";
+        //    DiscountAmount.Text = offer == null ? "0" : $"{offer.DiscountPercentage}";
+        //    if (offer == null)
+        //    {
+        //        NetAmount.Text = MoneyAmount.Text;
+        //    }
+        //    else
+        //    {
+        //        var _netAmount = selectedProgram.Price* (1- (offer.DiscountPercentage / 100) )
+        //                        * MonthsCount.Value;
+        //        NetAmount.Text =_netAmount.ToString();
+        //    }
+        //}
         private void UpdateData()
         {
             TraineeIdExist.Text = "";
+
+            Subscribe_PayBtn.Enabled = true; // 👈 مهم جدًا: reset كل مرة
+
             var selectedProgramId = Convert.ToInt32(TrainingProgramBox.SelectedValue);
             var selectedTraineeId = Convert.ToInt32(TraineeIdBox.Text);
+
             var selectedProgram = _TPService.GetTrainingPbyId(selectedProgramId);
             var offer = _offerService.GetOfferForProgram(selectedProgram!.Id);
-            if(_TSService.AlreadySubscribedInProgram(selectedProgramId , selectedTraineeId))
+
+            if (_TSService.AlreadySubscribedInProgram(selectedProgramId, selectedTraineeId))
             {
                 TraineeIdExist.Text = "Trainee already subscribed to this program";
                 Subscribe_PayBtn.Enabled = false;
+                return;
             }
-            MoneyAmount.Text = $"{selectedProgram!.Price * MonthsCount.Value}";
+
+            MoneyAmount.Text = $"{selectedProgram.Price * MonthsCount.Value}";
             DiscountAmount.Text = offer == null ? "0" : $"{offer.DiscountPercentage}";
+
             if (offer == null)
             {
                 NetAmount.Text = MoneyAmount.Text;
             }
             else
             {
-                var _netAmount = selectedProgram.Price* (1- (offer.DiscountPercentage / 100) )
+                var _netAmount = selectedProgram.Price * (1 - (offer.DiscountPercentage / 100))
                                 * MonthsCount.Value;
-                NetAmount.Text =_netAmount.ToString();
+                NetAmount.Text = _netAmount.ToString();
             }
         }
         private void LoadData()

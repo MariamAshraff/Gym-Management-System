@@ -22,10 +22,24 @@ namespace Gym_Management_System.Services.Implementation
         {
             return _gymContext.Trainees.FirstOrDefault(p => p.Id == id);
         }
+        //public List<TrainerDisplayDto> GetAll()
+        //{
+        //    return _gymContext.Trainers
+        //        .Where(t => t.IsActive)
+        //        .Select(t => new TrainerDisplayDto
+        //        {
+        //            Id = t.Id,
+        //            Name = t.Name,
+        //            Phone = t.Phone,
+        //            Specialty = t.Specialty,
+        //            Salary = t.Salary,
+        //            HireDate = t.HireDate,
+        //            TraineeCount = t.Trainees.Count
+        //        }).ToList();
+        //}
         public List<TrainerDisplayDto> GetAll()
         {
             return _gymContext.Trainers
-                .Where(t => t.IsActive)
                 .Select(t => new TrainerDisplayDto
                 {
                     Id = t.Id,
